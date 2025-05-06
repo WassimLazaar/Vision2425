@@ -5,7 +5,7 @@
 # Hello World Example
 #
 # Welcome to the OpenMV IDE! Click on the green run arrow button below to run the script!
-
+#Project blok 8 - Vision
 import sensor
 import time
 
