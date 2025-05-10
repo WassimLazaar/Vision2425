@@ -1,5 +1,5 @@
 import cv2
-
+#test
 # Specificeer het pad naar het PPM-bestand
 image_path = r'C:\Users\Rachid\Documents\GTSRB_Dataset\GTSRB_Final_Training_Images\GTSRB\Final_Training\Images\00000\00005_00017.ppm'
 
