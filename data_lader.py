@@ -1,12 +1,13 @@
 import os # door mapstructuur te lopen
 import cv2 # afbeeldingen lezen en resizen
-import numpy as np
+import numpy as np # voor matrixbewerkingen
 
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 
 data_dir = r'c:\Users\Rachid\Documents\GTSRB_Dataset\GTSRB_Final_Training_Images\GTSRB\Final_Training\Images'
 
+# hier begint de functie om data in te laden
 def load_data(data_dir, img_size=(32, 32)):
     images = []
     labels = []
@@ -20,12 +21,12 @@ def load_data(data_dir, img_size=(32, 32)):
         for file in os.listdir(label_path):
             if file.endswith('.ppm'):
                 img_path = os.path.join(label_path, file)
-                image = cv2.imread(img_path)
-                image = cv2.resize(image, img_size)
-                images.append(image)
-                labels.append(int(label))  # mapnaam = class label
+                image = cv2.imread(img_path) # lees de afbeelding als een matrix van pixels
+                image = cv2.resize(image, img_size) # geef afbeelding deze size
+                images.append(image) # afbeelding aan images lijst toevoegen
+                labels.append(int(label))  # label omgezet naar getal en toegevoegd aan label array
 
-    X = np.array(images)
+    X = np.array(images) #np arrays
     y = np.array(labels)
 
     # Normaliseer en one-hot encode
